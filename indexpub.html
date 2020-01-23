@@ -1,76 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Color Game</title>
-    <link rel="stylesheet" type="text/css" href="color game.css">
-    <div id="test">
-    </div>
-    <style>
-      .abc{
-        padding: 50px;
-        transition: transform .2s; /* Animation */
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        border-radius:10px;
-      }
-      
-      .abc:hover {
-        transform: scale(1.2); 
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Color Game</title>
+  <link rel="stylesheet" type="text/css" href="color game.css">
+  <div id="test">
+  </div>
+  <style>
+    .abc {
+      padding: 50px;
+      transition: transform .2s;
+      /* Animation */
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    .abc:hover {
+      transform: scale(1.2);
+    }
+  </style>
 
   <script type="text/javascript">
-      let url="http://localhost:4500/adreq";
-      fetch(url).then(response => response.json())
-      .then( (result) => {
-          console.log('success:', result)
-          let div=document.getElementById('test');
-          div.innerHTML=`<form id="myform" method="post" action="http://localhost:4500/click">
+    let url = "http://localhost:4500/adreq";
+    fetch(url).then(response => response.json())
+      .then((result) => {
+        console.log('success:', result)
+        let div = document.getElementById('test');
+        div.innerHTML = `<form id="myform" method="post" action="http://localhost:4500/click">
     <div><input type="image" class="abc" align = "right" style="padding-bottom:25%;margin-top:20%;height:100%;margin-right:20px;"  name="color" value="blue" alt="blue" src="${result.message}" width="300" height="270"></div>
   </form>`
-         // div.innerHTML=`title: ${result.title}<br/>message: ${result.message}`;
+        // div.innerHTML=`title: ${result.title}<br/>message: ${result.message}`;
       })
       .catch(error => console.log('error:', error));
   </script>
-  
+
   </script>
 </head>
 <html>
+
 <body>
-    
-        
-        
-          <h1>The Great 
-            <br>
-            <span id="colorDisplay">RGB </span> 
-            <br>
-            Game</h1>
-          <div id = "stripe">
-            <button id = "reset">New Colors</button>
-            <span id="message"></span>
-            <button id="easyBtn">Easy</button>
-            <button id="hardBtn" class="selected">Hard</button>
-        
-          </div>
-          <div id ="container">
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-            <div class="square"></div>
-        
-          </div>
-        <script type="text/javascript" src="color game.js"></script>
-        
- 
-   <!-- < -->
+
+
+
+  <h1>The Great
+    <br>
+    <span id="colorDisplay">RGB </span>
+    <br>
+    Game</h1>
+  <div id="stripe">
+    <button id="reset">New Colors</button>
+    <span id="message"></span>
+    <button id="easyBtn">Easy</button>
+    <button id="hardBtn" class="selected">Hard</button>
+
+  </div>
+  <div id="container">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+
+  </div>
+  <script type="text/javascript" src="color game.js"></script>
+
+
+  <!-- < -->
 
   <div id="test"></div>
-  
+
 </body>
+
 </html>

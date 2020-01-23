@@ -1,33 +1,35 @@
 <head>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-kit/2.0.4/css/material-kit.css"> 
-   <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+    integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-kit/2.0.4/css/material-kit.css">
+  <link rel="stylesheet" href="register.css">
 </head>
+
 <body style="background-color:#fde5ff">
-<div class="container">
-<div>
-  <header class = "jumbotron" style="background-color:#fde5ff">
-    <div class="container">
-      <ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link active" href="/">Ralloon</a>
-  </li>
-   <% if(!currentUser){ %>
-             <li class="nav-item" style="float: right">
-                <a class="nav-link" href="/register" style="float: right">Signup</a>
-             </li>
+  <div class="container">
+    <div>
+      <header class="jumbotron" style="background-color:#fde5ff">
+        <div class="container">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Ralloon</a>
+            </li>
+            <% if(!currentUser){ %>
+            <li class="nav-item" style="float: right">
+              <a class="nav-link" href="/register" style="float: right">Signup</a>
+            </li>
             <li class="nav-item" style="float: right">
               <a class="nav-link" href="/login" style="float: right">Signin</a>
             </li>
             </li>
-             <li class="nav-item" style="float: right">
+            <li class="nav-item" style="float: right">
               <a class="nav-link" href="/register/advertiser" style="float: right">Advertiser</a>
             </li>
             <li class="nav-item" style="float: right">
               <a class="nav-link" href="/registerP" style="float: right">Publisher</a>
             </li>
-    <% } else{ %>
-              <!-- <li class="nav-item">
+            <% } else{ %>
+            <!-- <li class="nav-item">
                 <span class="navbar-text">
                      Signed in as <%= currentUser.username %>
                 </span>
@@ -36,81 +38,81 @@
               <li class="nav-item" style="float: right">
                 <a class="nav-link" href="/logout" style="float: right">Logout</a>
               </li> -->
-          <% } %>
-  </header>
+            <% } %>
+      </header>
     </div>
 
 
-<div class="row">
-  <div style = "width: 60%; margin: auto;">
-<form action="/register/info" method="POST">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="firstname">First Name</label>
-      <input type="text" class="form-control" name="fname" id="firstname" placeholder="Enter First Name">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="lastname">Last Name</label>
-      <input type="text" class="form-control" name="lname" id="lastname" placeholder="Enter Last Name">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Enter Email">
-    </div>
-  <!--  <div class="form-group col-md-6">-->
-  <!--    <label for="inputPassword4">Password</label>-->
-  <!--    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">-->
-  <!--  </div>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-  <!--  <label for="confirmpass">Confirm Password</label>-->
-  <!--  <input type="text" class="form-control" id="confirmpass" placeholder="Confirm Password">-->
-  <!--</div>-->
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" name="add" id="inputAddress" placeholder="1234 Main St">
-  </div>
+    <div class="row">
+      <div style="width: 60%; margin: auto;">
+        <form action="/register/info" method="POST">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" name="fname" id="firstname" placeholder="Enter First Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" name="lname" id="lastname" placeholder="Enter Last Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Enter Email">
+            </div>
+            <!--  <div class="form-group col-md-6">-->
+            <!--    <label for="inputPassword4">Password</label>-->
+            <!--    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">-->
+            <!--  </div>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+            <!--  <label for="confirmpass">Confirm Password</label>-->
+            <!--  <input type="text" class="form-control" id="confirmpass" placeholder="Confirm Password">-->
+            <!--</div>-->
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" name="add" id="inputAddress" placeholder="1234 Main St">
+            </div>
 
-  <div class="form-group col-md-6">
-      <label>Name on card</label>
-      <input type="text" class="form-control" name="cname" placeholder="Enter Name as in your credit card">
+            <div class="form-group col-md-6">
+              <label>Name on card</label>
+              <input type="text" class="form-control" name="cname" placeholder="Enter Name as in your credit card">
+            </div>
+            <div class="form-group col-md-6">
+              <label>CVV</label>
+              <input type="text" class="form-control" name="cvv" placeholder="Enter CVV Number">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Credit Card Number</label>
+              <input type="text" class="form-control" name="cnumber" placeholder="Enter Credit Card Number">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Expiration Date</label>
+              <input type="Date" class="form-control" name="exdate">
+            </div>
+
+            <!--<div class="form-group">-->
+            <!--  <label for="inputAddress2">Address 2</label>-->
+            <!--  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">-->
+            <!--</div>-->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" name="city" id="inputCity">
+              </div>
+              <div class="form-group col-md-3">
+                <label for="inputState">State</label>
+                <input type="text" class="form-control" name="state" id="inputState">
+              </div>
+              <div class="form-group col-md-2 ml-auto">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" name="zip" id="inputZip">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+      </div>
     </div>
-<div class="form-group col-md-6">
-      <label>CVV</label>
-      <input type="text" class="form-control" name="cvv"  placeholder="Enter CVV Number">
-    </div>
-    <div class="form-group col-md-6">
-      <label>Credit Card Number</label>
-      <input type="text" class="form-control" name="cnumber"  placeholder="Enter Credit Card Number">
-    </div>
-    <div class="form-group col-md-6">
-      <label>Expiration Date</label>
-      <input type="Date" class="form-control" name="exdate">
-    </div>
-  
-  <!--<div class="form-group">-->
-  <!--  <label for="inputAddress2">Address 2</label>-->
-  <!--  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">-->
-  <!--</div>-->
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" name="city" id="inputCity">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="inputState">State</label>
-      <input type="text" class="form-control" name="state" id="inputState">
-    </div>
-    <div class="form-group col-md-2 ml-auto">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" name="zip" id="inputZip">
-    </div>
-  </div>
- 
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
-</div>
-</div>
 </body>

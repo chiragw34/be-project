@@ -1,7 +1,5 @@
-const routes = require('next-routes')();
+const routes = require("next-routes")();
 
-routes
-    .add('/', '/')
-    .add('/add-account', '/add-account');
+routes.add("/", "/").add("/add-account", "/add-account");
 
 module.exports = routes;

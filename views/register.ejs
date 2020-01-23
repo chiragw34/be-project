@@ -1,78 +1,80 @@
 <head>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-kit/2.0.4/css/material-kit.css"> 
-   <link rel="stylesheet" href="register.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+    integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-kit/2.0.4/css/material-kit.css">
+  <link rel="stylesheet" href="register.css">
 </head>
 
 
- <body style="background-color:#fde5ff">   
-<div class="container">
-<div>
-  <header class = "jumbotron"style="background-color:#fde5ff">
-    <div class="container">
-      <ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link active" href="/">Ralloon</a>
-  </li>
-   <% if(!currentUser){ %>
-             
+<body style="background-color:#fde5ff">
+  <div class="container">
+    <div>
+      <header class="jumbotron" style="background-color:#fde5ff">
+        <div class="container">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Ralloon</a>
+            </li>
+            <% if(!currentUser){ %>
+
             <li class="nav-item" style="float: right">
               <a class="nav-link" href="/login" style="float: right">Signin</a>
             </li>
-    <% } else{ %>
-              <li class="nav-item">
-                <span class="navbar-text">
-                     Signed in as <%= currentUser.username %>
-                </span>
-                
-              </li>
-              <li class="nav-item" style="float: right">
-                <a class="nav-link" href="/logout" style="float: right">Logout</a>
-              </li>
-          <% } %>
-  </header>
+            <% } else{ %>
+            <li class="nav-item">
+              <span class="navbar-text">
+                Signed in as <%= currentUser.username %>
+              </span>
+
+            </li>
+            <li class="nav-item" style="float: right">
+              <a class="nav-link" href="/logout" style="float: right">Logout</a>
+            </li>
+            <% } %>
+      </header>
     </div>
-  <div class="container">
-  <div class = "row">
-    
-    <div style = "width: 60%; margin: auto;">
-      <form action="/register" method="POST">
-        <h2 style="margin: 0 auto; padding-bottom: 10%">Come Register with Us!</h2>
-        <div class="form-group">
-          
-        <input class="form-control" id="exampleInputUsername"  name="username" placeholder="Enter User Name"><br>
+    <div class="container">
+      <div class="row">
+
+        <div style="width: 60%; margin: auto;">
+          <form action="/register" method="POST">
+            <h2 style="margin: 0 auto; padding-bottom: 10%">Come Register with Us!</h2>
+            <div class="form-group">
+
+              <input class="form-control" id="exampleInputUsername" name="username" placeholder="Enter User Name"><br>
+            </div>
+            <div class="form-group">
+
+              <input type="password" class="form-control" id="txtPassword" name="password" id="exampleInputPassword2"
+                placeholder="Password">
+            </div><br>
+            <div class="form-group">
+
+              <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Confirm Password">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" onclick="return Validate()">Submit</button>
+          </form>
+
         </div>
-        <div class="form-group">
-   
-          <input type="password" class="form-control" id="txtPassword" name="password" id="exampleInputPassword2" placeholder="Password">
-        </div><br>
-        <div class="form-group">
-   
-          <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Confirm Password">
-        </div>
-        
-        
-  <button type="submit" class="btn btn-primary" onclick="return Validate()">Submit</button>
-</form>
-    
-  </div>
-  
-      
+
+
+      </div>
     </div>
- </div>
 </body>
-  
+
 </div>
 
 <script type="text/javascript">
-    function Validate() {
-        var password = document.getElementById("txtPassword").value;
-        var confirmPassword = document.getElementById("txtConfirmPassword").value;
-        if (password != confirmPassword) {
-            alert("Passwords do not match.");
-            return false;
-        }
-        return true;
+  function Validate() {
+    var password = document.getElementById("txtPassword").value;
+    var confirmPassword = document.getElementById("txtConfirmPassword").value;
+    if (password != confirmPassword) {
+      alert("Passwords do not match.");
+      return false;
     }
+    return true;
+  }
 </script>
 </body>

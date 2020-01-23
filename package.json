@@ -30,7 +30,7 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1",
     "path": "^0.12.7",
-    "phantomjs": "^1.9.8",
+    "phantomjs": "^1.9.20",
     "react": "^16.2.0",
     "react-delay": "^0.1.0",
     "react-dom": "^16.2.0",
