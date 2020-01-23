@@ -1,0 +1,96 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-kit/2.0.4/css/material-kit.css"> 
+    <link rel="stylesheet" href="register.css">
+ </head>
+ <body class="container">
+    <div class="container">
+        <div>
+          <header class = "jumbotron" style="background-color:#fde5ff">
+            <div class="container">
+              <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Ralloon</a>
+          </li>
+           <% if(!currentUser){ %>
+                     <li class="nav-item" style="float: right">
+                        <a class="nav-link" href="/register" style="float: right">Signup</a>
+                     </li>
+                     <li class="nav-item" style="float: right">
+                      <a class="nav-link" href="/register" style="float: right">Advertiser</a>
+                    </li>
+                    <li class="nav-item" style="float: right">
+                      <a class="nav-link" href="/register" style="float: right">Publisher</a>
+                    </li>
+                    
+            <% } else{ %>
+                      <li class="nav-item">
+                        <span class="navbar-text">
+                             Signed in as <%= currentUser.username %>
+                        </span>
+                        
+                      </li>
+                      <li class="nav-item" style="float: right">
+                        <a class="nav-link" href="/logout" style="float: right">Logout</a>
+                      </li>
+                  <% } %>
+          </header>
+            </div>
+   <div class = "row">
+     
+     <div style = "width: 60%; margin: auto;">
+       <form>
+        
+         <div class="form-group">
+           <label>Width</label>
+         <input class="form-control" id="exampleInputUsername" placeholder="Enter Width of the image that can be displayed"><br>
+         </div>
+         <div class="form-group">
+            <label>Height</label>
+          <input class="form-control" id="exampleInputUsername" placeholder="Enter Height of the image that can be displayed"><br>
+          </div>
+          <div class="form-group">
+            
+              <label>Type</label>
+            <input class="form-control" id="exampleInputUsername" placeholder="Enter Type of ad eg:banner ads"><br>
+            </div>
+          <div class="form-group">
+            
+            <label>Category</label>
+          <input class="form-control" id="exampleInputUsername" placeholder="Enter category"><br>
+          </div>
+          <!-- <input type="text" value="form:",input:input type=image name=color value=blue alt=blue src=http://localhost:4000/adreq id=myInput>
+          <button onclick=myFunction()>Copy text</button>
+          
+          <p>The document.execCommand() method is not supported in IE8 and earlier.</p>
+          
+          <script>
+          function myFunction() {
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            document.execCommand("copy");
+            alert("Copied the text: " + copyText.value);
+          }
+          </script> -->
+          <h4>Copy below code:</h4>
+          
+            <pre>
+              
+                  <script>
+                    
+                    </script>
+               
+           </pre>
+          </p>
+          
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+     
+   </div>
+   
+       
+     </div>
+  
+ </body>
+   
+ </div>

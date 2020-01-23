@@ -1,0 +1,144 @@
+<% include ../partials/header %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V12</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="bg-contact100" style="background-image: url('/images/bg-01.jpg');">
+		<div class="container-contact100">
+			<div class="wrap-contact100">
+				<div class="contact100-pic js-tilt" data-tilt>
+					<img src="/images/img-01.png" alt="IMG" style="height: 89%">
+				</div>
+
+				<form action="/register/advertiser" method="POST" class="contact100-form validate-form">
+					<span class="contact100-form-title">
+						Details
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" type="text" name="name" placeholder="Campaign Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" onfocus="(this.type='date')" onblur="(this.type='text')" name="sDate" placeholder="Start Date">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-calendar" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" onfocus="(this.type='date')" onblur="(this.type='text')" name="eDate" placeholder="End Date">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-calendar" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" type="time" name="sTime" placeholder="Time Slot">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-clock-o" aria-hidden="true"></i>
+						</span>
+					</div>
+					<!-- <div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" type="text" name="img" placeholder="Upload image/video of product">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-file-image-o" aria-hidden="true"></i>
+						</span>
+					</div> -->
+					<!-- <div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" type="text" name="desc" placeholder="Enter Description about product">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-file-text" aria-hidden="true"></i>
+						</span>
+					</div> -->
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" type="text" name="lurl" placeholder="Landing Url">
+						<span class="focus-input100"></span>
+						<!-- <span class="symbol-input100"> -->
+							<!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
+						<!-- </span> -->
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" type="number" step="0.1" name="min" placeholder="Bid Range(min)">
+						<span class="focus-input100"></span>
+						<!-- <span class="symbol-input100">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+						</span> -->
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Name is required">
+						<input class="input100" type="number" step="0.1" name="max" placeholder="Bid Range(max)">
+						<span class="focus-input100"></span>
+						<!-- <span class="symbol-input100">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+						</span> -->
+					</div>
+
+					<div class="container-contact100-form-btn">
+						<button class="contact100-form-btn">
+							Send
+						</button>
+					</div>
+				</form>
+			</div>
+		</div> 
+	 </div> 
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css"
+    integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-kit/2.0.4/css/material-kit.css">
+  <link rel="stylesheet" href="register.css">
+</head>
+
+
+<div class="container">
+  <div>
+    <header class="jumbotron">
+      <div class="container">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Ralloon</a>
+          </li>
+          <% if(!currentUser){ %>
+          <li class="nav-item" style="float: right">
+            <a class="nav-link" href="/register" style="float: right">Signup</a>
+          </li>
+          <li class="nav-item" style="float: right">
+            <a class="nav-link" href="/login" style="float: right">Signin</a>
+          </li>
+          <li class="nav-item" style="float: right">
+            <a class="nav-link" href="/register/advertiser" style="float: right">Advertiser</a>
+          </li>
+          <li class="nav-item" style="float: right">
+            <a class="nav-link" href="/registerP" style="float: right">Publisher</a>
+          </li>
+          <% } else{ %>
+          <li class="nav-item">
+            <span class="navbar-text">
+              Signed in as <%= currentUser.username %>
+            </span>
+
+          </li>
+          <li class="nav-item" style="float: right">
+            <a class="nav-link" href="/logout" style="float: right">Logout</a>
+          </li>
+          <% } %>
+    </header>
+  </div>
+
+
+  <div class="container">
+    <% ads.forEach(function(ads) { %>
+    <% if(currentUser.username == ads.author.username) { %>
+
+
+    <div class="card card-nav-tabs text-center">
+      <div class="card-header card-header-primary">
+
+        Your Campaign: <%= ads.name%>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">From: <%= ads.sDate.toDateString() %> To <%= ads.eDate.toDateString()%></h4>
+        <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+        <a href="/ads/<%= ads._id %>" class="btn btn-primary">Show Info</a>
+      </div>
+      <div class="card-body">
+        <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+        <a href="localhost:3000" class="btn btn-primary">Claim Rewards</a>
+      </div>
+
+    </div>
+    <% } %>
+    <% }) %>
+
+  </div>

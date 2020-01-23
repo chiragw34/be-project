@@ -1,0 +1,110 @@
+
+<head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-kit/2.0.4/css/material-kit.css"> 
+   <link rel="stylesheet" href="register.css">
+
+</head>
+<body style="background-color:#fde5ff">
+<div class="container">
+<div>
+  <header class = "jumbotron" style="background-color:#fde5ff">
+    <div class="container">
+      <ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" href="/">Ralloon</a>
+  </li>
+   <% if(!currentUser){ %>
+             <li class="nav-item" style="float: right">
+                <a class="nav-link" href="/register" style="float: right">Signup</a>
+             </li>
+            <li class="nav-item" style="float: right">
+              <a class="nav-link" href="/login" style="float: right">Signin</a>
+            </li>
+            <li class="nav-item" style="float: right">
+              <a class="nav-link" href="/register/advertiser" style="float: right">Advertiser</a>
+            </li>
+            <li class="nav-item" style="float: right">
+              <a class="nav-link" href="/registerP" style="float: right">Publisher</a>
+            </li>
+    <% } else{ %>
+    
+              <li class="nav-item">
+                <span class="navbar-text">
+                     Signed in as <%= currentUser.username %>
+                </span>
+                
+              </li>
+          
+              <li class="nav-item" >
+                <a class="nav-link" href="/logout" >Logout</a>
+              </li>
+          <% } %>
+  </header>
+    </div>
+  <div class = "row">
+    
+    <div style = "width: 60%; margin: auto;">
+      <form action="/register/advertiser" method="POST">
+      
+        <!-- <h2 style="margin: 0 auto; padding-bottom: 10%">Enetr Details</h2> -->
+      <!-- <label>Enter Campaign Name</label> -->
+      <label style="color: black">Enter Campaign Name</label>
+       <input class="form-control" name="name" id="exampleInputUsername" placeholder="Enter Campaign Name" style="width: 50%;"><br>
+       <!-- <input type="text" class="form-control datetimepicker" value="10/05/2016"/> -->
+       <!-- input with datetimepicker -->
+       <label style="color: black">Enter start and end Date</label>
+       <div class="row">
+           <div class="col">
+               <input placeholder="From" name="sDate" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" style="line-height:1.5;">
+           </div>
+           <div class="col">
+               <input placeholder="To"name ="eDate" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" style="line-height:1.5;">
+           </div>
+           
+       </div>
+       <label style="color: black">Enter Time Slot</label>
+       <input class="form-control" type="time" name="sTime" style="line-height:1.5;width:30%;"><br>
+       <label style="color: black">Upload image/video of product</label>
+       <input class="form-control" type="text" name="img" placeholder="img url" style="line-height:1.5;width:30%;"><br>
+       
+       <div class="form-group">
+            <label style="color: black">Enter description about product</label>
+            <textarea class="form-control" placeholder="Description" name="desc" id="desc" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label style="color: black">Enter landing url</label>
+          <input type="text" class="form-control" placeholder="Enter landing url" name="lurl" id" rows="3">
+      </div>
+       
+       <label style="color: black">Enter bid range</label>
+       <div class="row">
+           <div class="col">
+               
+                <input class="form-control" name= "min" step="0.1" type="number" placeholder="min" style="line-height:1.5;">
+                
+           </div>
+           
+           
+           <div class="col">
+               
+                <input class="form-control" name="max" type="number" placeholder="max" style="line-height:1.5;">
+               
+           </div>
+            
+            
+      </div>
+       
+        
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    
+  </div>
+  
+      
+    </div>
+ </div>
+</body>
+  
+</div>
+</body>
